@@ -14,7 +14,7 @@ function transform (filename, source, options, done) {
       }
     }, options || {}))
   } catch (e) {
-    return done(null, e)
+    return done(e)
   }
 
   done(null, source)
