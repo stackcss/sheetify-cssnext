@@ -1,6 +1,6 @@
 {
   "name": "sheetify-cssnext",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "dependencies": {
     "cssnext": "^1.8.4",
