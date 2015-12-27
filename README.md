@@ -10,7 +10,7 @@ $ npm install sheetify-cssnext
 
 ## Usage
 ```js
-const sheetify = require('sheetify')
+const sheetify = require('sheetify/stream')
 const path = require('path')
 
 const opts = {
