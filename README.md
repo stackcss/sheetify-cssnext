@@ -23,7 +23,7 @@ sheetify(path.join(__dirname, 'index.css'), opts)
 ```
 
 ## See Also
-- [cssnext][13]
+- [cssnext][12]
 - [sheetify][13]
 
 ## License
@@ -38,4 +38,4 @@ sheetify(path.join(__dirname, 'index.css'), opts)
 [10]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [11]: https://github.com/feross/standard
 [12]: https://github.com/cssnext/cssnext
-[12]: https://github.com/sheetify/sheetify
+[13]: https://github.com/sheetify/sheetify
