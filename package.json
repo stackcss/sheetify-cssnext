@@ -2,11 +2,33 @@
   "name": "sheetify-cssnext",
   "version": "1.0.5",
   "main": "index.js",
+  "description": "cssnext transform for sheetify",
+  "scripts": {
+    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "test": "standard && npm run deps && NODE_ENV=test node test",
+    "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test.js"
+  },
+  "repository": "sheetify/sheetify-cssnext",
+  "keywords": [
+    "sheetify",
+    "cssnext",
+    "css",
+    "preload",
+    "compile",
+    "polyfill",
+    "shim",
+    "stream",
+    "minimal"
+  ],
+  "license": "MIT",
   "dependencies": {
     "cssnext": "^1.8.4",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
+    "dependency-check": "^2.5.1",
+    "istanbul": "^0.4.1",
+    "standard": "^5.4.1",
     "tape": "^4.2.1"
   }
 }
