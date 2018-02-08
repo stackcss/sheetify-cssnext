@@ -3,25 +3,37 @@ const test = require('tape')
 const path = require('path')
 const fs = require('fs')
 
-test('basic', compare('basic.css', 'basic-out.css'))
-test('import', compare('import.css', 'basic-out.css'))
+test('basic', function (t) {
+  t.plan(1)
 
-function compare (inputFile, outputFile) {
-  return function compareTest (t) {
-    const file = path.join(__dirname, 'fixtures', inputFile)
-    const src = fs.readFileSync(file, 'utf8')
-    const expected = fs.readFileSync(
-      path.join(__dirname, 'fixtures', outputFile)
-    , 'utf8')
+  const file = path.join(__dirname, 'fixtures/basic.css')
+  const src = fs.readFileSync(file, 'utf8')
+  const expected = fs.readFileSync(path.join(__dirname, 'fixtures/basic-out.css'), 'utf8')
 
-    t.plan(1)
+  transform(file, src, {
+    sourcemap: false
+  }, function (err, actual) {
+    if (err) return t.error(err)
 
-    transform(file, src, {
-      sourcemap: false
-    }, function (err, actual) {
-      if (err) return t.error(err)
+    t.equal(actual.css, expected, 'output is as expected')
+  })
+})
+test('import', function (t) {
+  t.plan(2)
 
-      t.equal(actual, expected, 'output is as expected')
-    })
-  }
-}
+  const file = path.join(__dirname, 'fixtures/import.css')
+  const src = fs.readFileSync(file, 'utf8')
+  const expected = fs.readFileSync(path.join(__dirname, 'fixtures/basic-out.css'), 'utf8')
+
+  transform(file, src, {
+    sourcemap: false
+  }, function (err, actual) {
+    if (err) return t.error(err)
+
+    t.equal(actual.css, expected, 'output is as expected')
+    t.deepEqual(actual.files, [
+      file,
+      path.join(__dirname, 'fixtures/basic.css')
+    ], 'lists imported files')
+  })
+})
