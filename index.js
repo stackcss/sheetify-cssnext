@@ -1,21 +1,32 @@
-const cssnext = require('cssnext')
+const postcss = require('postcss')
+const cssnext = require('postcss-cssnext')
+const imports = require('postcss-import')
 const xtend = require('xtend')
 
 module.exports = transform
 
 function transform (filename, source, options, done) {
-  try {
-    source = cssnext(source, xtend({
-      sourcemap: true,
-      from: filename,
-      messages: {
-        browser: true,
-        console: false
-      }
-    }, options || {}))
-  } catch (e) {
-    return done(e)
-  }
+  options = xtend(options || {})
+  const sourcemap = options.sourcemap
+  delete options.sourcemap
 
-  done(null, source)
+  const processor = postcss([
+    imports(),
+    cssnext(options)
+  ])
+
+  const poptions = xtend({
+    map: sourcemap === false ? false : { inline: true },
+    from: filename,
+    messages: {
+      browser: true,
+      console: false
+    }
+  }, options || {})
+
+  processor.process(source, poptions).then(function (result) {
+    done(null, result.css)
+  }, function (err) {
+    done(err)
+  })
 }

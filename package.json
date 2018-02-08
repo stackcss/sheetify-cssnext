@@ -22,7 +22,9 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "cssnext": "^1.8.4",
+    "postcss": "^6.0.17",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.0.0",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
