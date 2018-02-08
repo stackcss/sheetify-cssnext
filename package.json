@@ -30,7 +30,7 @@
   "devDependencies": {
     "dependency-check": "^2.5.1",
     "istanbul": "^0.4.1",
-    "standard": "^5.4.1",
+    "standard": "^10.0.3",
     "tape": "^4.2.1"
   },
   "engines": {
