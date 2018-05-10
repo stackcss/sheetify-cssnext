@@ -14,7 +14,7 @@ const sheetify = require('sheetify/stream')
 const path = require('path')
 
 const opts = {
-  use: [ [ 'sheetify-cssnext', { sourcemap: false } ] ],
+  transform: [ [ 'sheetify-cssnext', { sourcemap: false } ] ],
   basedir: __dirname
 }
 
