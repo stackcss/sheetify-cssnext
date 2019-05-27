@@ -1,6 +1,6 @@
 {
   "name": "sheetify-cssnext",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "description": "cssnext transform for sheetify",
   "scripts": {
