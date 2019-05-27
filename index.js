@@ -3,6 +3,12 @@ const cssnext = require('postcss-cssnext')
 const imports = require('postcss-import')
 const xtend = require('xtend')
 
+// Patch CSSNext features map to ensure Node v4 support
+const features = require('postcss-cssnext/lib/features').default
+features.calc = function calc (options) {
+  return require('postcss-calc')(options)
+}
+
 module.exports = transform
 
 function transform (filename, source, options, done) {
