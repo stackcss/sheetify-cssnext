@@ -1,4 +1,8 @@
-hello, world {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
+:root {
+  --mainColor: rgba(18,52,86,0.47059);
+}
+
+body {
+  color: rgba(18,52,86,0.47059);
+  color: var(--mainColor);
 }

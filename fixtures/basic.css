@@ -1,3 +1,7 @@
-hello, world {
-  transform: translate(0, 0);
+:root {
+  --mainColor: #12345678;
+}
+
+body {
+  color: var(--mainColor);
 }
