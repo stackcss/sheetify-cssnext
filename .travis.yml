@@ -1,7 +1,8 @@
+language: node_js
 node_js:
 - "stable"
-- "4"
-sudo: false
-language: node_js
+- "12"
+- "10"
+- "8"
 script: "npm run test:cov"
 after_script: "npm i -g codecov.io && cat ./coverage/lcov.info | codecov"
