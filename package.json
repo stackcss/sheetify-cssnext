@@ -1,6 +1,6 @@
 {
   "name": "sheetify-cssnext",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "main": "index.js",
   "description": "cssnext transform for sheetify",
   "scripts": {
@@ -34,6 +34,6 @@
     "tape": "^5.0.1"
   },
   "engines": {
-    "node": ">= 4"
+    "node": ">= 8"
   }
 }

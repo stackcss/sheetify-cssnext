@@ -1,7 +1,7 @@
 # sheetify-cssnext [![stability][0]][1]
 [![build status][4]][5] [![test coverage][6]][7] [![js-standard-style][10]][11]
 
-[cssnext][12] transform for [sheetify][13]. Use tomorrow's CSS syntax, today.
+[postcss-preset-env][12] transform for [sheetify][13]. Use tomorrow's CSS syntax, today.
 
 ## Installation
 ```sh
@@ -23,7 +23,7 @@ sheetify(path.join(__dirname, 'index.css'), opts)
 ```
 
 ## See Also
-- [postcss-cssnext][12]
+- [postcss-preset-env][12]
 - [sheetify][13]
 
 ## License
@@ -37,5 +37,5 @@ sheetify(path.join(__dirname, 'index.css'), opts)
 [7]: https://codecov.io/github/stackcss/sheetify-cssnext
 [10]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [11]: https://github.com/feross/standard
-[12]: https://github.com/MoOx/postcss-cssnext
+[12]: https://github.com/csstools/postcss-preset-env
 [13]: https://github.com/stackcss/sheetify
